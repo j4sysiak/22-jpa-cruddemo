@@ -15,6 +15,7 @@ public class EmployeeDAOJpaImpl implements EmployeeDAO {
 
 	private EntityManager entityManager;
 	
+	//constractor injection
 	@Autowired
 	public EmployeeDAOJpaImpl(EntityManager theEntityManager) {
 		entityManager = theEntityManager;
@@ -24,8 +25,7 @@ public class EmployeeDAOJpaImpl implements EmployeeDAO {
 	public List<Employee> findAll() {
 
 		// create a query
-		Query theQuery = 
-				entityManager.createQuery("from Employee");
+		Query theQuery = entityManager.createQuery("from Employee");
 		
 		// execute query and get result list
 		List<Employee> employees = theQuery.getResultList();
@@ -33,6 +33,8 @@ public class EmployeeDAOJpaImpl implements EmployeeDAO {
 		// return the results		
 		return employees;
 	}
+	
+	
 
 	@Override
 	public Employee findById(int theId) {
