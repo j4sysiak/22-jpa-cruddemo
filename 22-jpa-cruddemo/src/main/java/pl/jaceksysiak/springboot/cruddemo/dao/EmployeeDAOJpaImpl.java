@@ -40,8 +40,7 @@ public class EmployeeDAOJpaImpl implements EmployeeDAO {
 	public Employee findById(int theId) {
 
 		// get employee
-		Employee theEmployee = 
-				entityManager.find(Employee.class, theId);
+		Employee theEmployee = entityManager.find(Employee.class, theId);
 		
 		// return employee
 		return theEmployee;
